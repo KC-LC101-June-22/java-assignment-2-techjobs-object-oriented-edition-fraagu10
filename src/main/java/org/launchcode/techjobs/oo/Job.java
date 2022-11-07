@@ -44,6 +44,7 @@ public class Job {
         return Objects.hash(id);
     }
 
+
     // Getters and Setters for Job class.
     public String getName() {
         return name;
@@ -87,6 +88,35 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+
+    // Custom tooString method
+    @Override
+    public String toString() {
+        if(name == null || name.equals("")) {
+            this.name = "Data not available";
+        }
+        if(employer.toString().equals("")) {
+            employer.setValue("Data not available");
+        }
+        if(location.toString().equals("")) {
+            location.setValue("Data not available");
+        }
+        if(positionType.toString().equals("")) {
+            positionType.setValue("Data not available");
+        }
+        if(coreCompetency.toString().equals("")) {
+            coreCompetency.setValue("Data not available");
+        }
+
+        return "\n" +
+                "ID: " + this.id + "\n" +
+                "Name: " + this.name + "\n" +
+                "Employer: " + this.employer + "\n" +
+                "Location: " + this.location + "\n" +
+                "Position Type: " + this.positionType + "\n" +
+                "Core Competency: " + this.coreCompetency +
+                "\n";
     }
 
 }
